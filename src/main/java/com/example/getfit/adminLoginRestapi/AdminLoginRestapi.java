@@ -1,6 +1,9 @@
 package com.example.getfit.adminLoginRestapi;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,12 +15,13 @@ import com.example.getfit.adminlogincontroller.Adminlogin;
 
 @RestController
 @RequestMapping("/api/admin")
+@CrossOrigin(origins = "http://localhost:3000")
+
 public class AdminLoginRestapi {
 @Autowired
 private AdminService adminService;
-@PostMapping("/login")
-public String verifyAdmin(@RequestBody Adminlogin adminLogin) {
-	return adminService.verifyAdmin(adminLogin);
+@PostMapping("/adminlogin")
+public Map<String, String> adminLogin(@RequestBody Adminlogin adminlogin) {
+    return adminService.verifyAdmin(adminlogin);
 }
-
 }

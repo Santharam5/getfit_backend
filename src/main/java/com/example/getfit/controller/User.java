@@ -11,7 +11,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private int phonenumber;
+	private String phonenumber;
 	private String email;
 	private String query;
 
@@ -31,11 +31,11 @@ public class User {
 		this.name = name;
 	}
 
-	public int getPhonenumber() {
+	public String getPhonenumber() {
 		return phonenumber;
 	}
 
-	public void setPhonenumber(int phonenumber) {
+	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
 	}
 

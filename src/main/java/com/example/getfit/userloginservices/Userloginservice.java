@@ -1,5 +1,8 @@
 package com.example.getfit.userloginservices;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -21,17 +24,23 @@ public String signup(Userlogin userlogin) {
 		return "Signup successfully";
 	
 }
-public String login( Userlogin userlogin) {
-	Userlogin existingUser = userloginrepository.findByName(userlogin.getName());
+public Map<String, String> login(Userlogin userlogin) {
+    Map<String, String> response = new HashMap<>();
+    Userlogin existingUser = userloginrepository.findByName(userlogin.getName());
 
     if (existingUser == null) {
-        return "Invalid username!";
+        response.put("status", "error");
+        response.put("message", "Invalid username!");
+        return response;
     }
 
     if (!userlogin.getPassword().equals(existingUser.getPassword())) {
-        return "Invalid password!";
+        response.put("status", "error");
+        response.put("message", "Invalid password!");
+        return response;
     }
 
-    return "Login successful!";
-}
-}
+    response.put("status", "success");
+    response.put("message", "Login successful!");
+    return response;
+}}
