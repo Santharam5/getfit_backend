@@ -1,4 +1,4 @@
-package com.example.getfit.controller;
+package com.example.getfit.userlogincontroller;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,18 +6,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class User {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Userlogin {
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private String phonenumber;
+	private int phonenumber;
 	private String email;
-	private String query;
-
-	public int getId() {
-		return id;
-	}
+	private String password;
 
 	public void setId(int id) {
 		this.id = id;
@@ -31,20 +27,12 @@ public class User {
 		this.name = name;
 	}
 
-	public String getPhonenumber() {
+	public int getPhonenumber() {
 		return phonenumber;
 	}
 
-	public void setPhonenumber(String phonenumber) {
+	public void setPhonenumber(int phonenumber) {
 		this.phonenumber = phonenumber;
-	}
-
-	public String getQuery() {
-		return query;
-	}
-
-	public void setQuery(String query) {
-		this.query = query;
 	}
 
 	public String getEmail() {
@@ -54,4 +42,17 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public int getId() {
+		return id;
+	}
+
 }

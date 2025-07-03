@@ -16,11 +16,11 @@ import com.example.getfit.controller.User;
 import com.example.getfit.service.UserService;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 public class UserRestApi {
 @Autowired
 private UserService userService;
-@PostMapping("/create")
+@PostMapping("/createquery")
 public User Create(@RequestBody User Userdetails ) {
 	return userService.save(Userdetails);
 }
@@ -39,8 +39,9 @@ public User getsingleuserid(@PathVariable Integer id) {
 }
 @PutMapping("/{id}")
 public User updateuser(@PathVariable Integer id,@RequestBody User Userdetails ) {
-	User updateduser=userService.getUser(id);
-	return userService.save(Userdetails);
+	User updateduser = userService.getUser(id);
+    Userdetails.setId(updateduser.getId());
+    return userService.save(Userdetails);
 }
 @DeleteMapping("/{id}")
 	public String deletesingleuser(@PathVariable Integer id) {
