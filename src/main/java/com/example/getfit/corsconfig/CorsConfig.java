@@ -14,7 +14,7 @@ public class CorsConfig {
                 registry.addMapping("/**")
                         .allowedOrigins(
                           "https://get-4hrrx71dq-santharam-bs-projects.vercel.app",
-                          "http://localhost:3000"
+                          "http://localhost:3000","https://get-fit-git-main-santharam-bs-projects.vercel.app"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
