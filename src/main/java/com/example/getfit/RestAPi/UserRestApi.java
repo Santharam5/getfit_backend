@@ -16,7 +16,7 @@ import com.example.getfit.controller.User;
 import com.example.getfit.service.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "https://your-frontend-domain.com","https://get-4hrrx71dq-santharam-bs-projects.vercel.app"})
 public class UserRestApi {
 @Autowired
 private UserService userService;

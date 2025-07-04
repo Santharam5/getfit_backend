@@ -13,7 +13,7 @@ import com.example.getfit.userlogincontroller.Userlogin;
 import com.example.getfit.userloginservices.Userloginservice;
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "https://your-frontend-domain.com","https://get-4hrrx71dq-santharam-bs-projects.vercel.app"})
 public class UserloginRestapi {
 	@Autowired
 private Userloginservice userloginservice;
