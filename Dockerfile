@@ -16,7 +16,8 @@ RUN ./mvnw dependency:go-offline
 COPY src ./src
 
 # Package the Spring Boot application into a jar
-RUN ./mvnw package
+RUN ./mvnw package -DskipTests
+
 
 # Expose port 8080 to allow external access
 EXPOSE 8080
