@@ -15,7 +15,7 @@ import com.example.getfit.adminlogincontroller.Adminlogin;
 
 @RestController
 @RequestMapping("/api/admin")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "https://your-frontend-domain.com"})
 
 public class AdminLoginRestapi {
 @Autowired
